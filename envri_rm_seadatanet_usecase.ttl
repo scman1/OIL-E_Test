@@ -4,9 +4,9 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix oilea: <http://www.oil-e.net/ontology/rm-archetypes.owl> .
-@prefix oilec: <http://www.oil-e.net/ontology/rm-core.owl> .
-@prefix oiler: <http://www.oil-e.net/ontology/rm-correspondences.owl> .
+@prefix rm-arch: <http://www.oil-e.net/ontology/rm-archetypes.owl> .
+@prefix rm-core: <http://www.oil-e.net/ontology/rm-core.owl> .
+@prefix rm-crsp: <http://www.oil-e.net/ontology/rm-correspondences.owl> .
 @base <http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase> .
 
 <http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase> rdf:type owl:Ontology ;

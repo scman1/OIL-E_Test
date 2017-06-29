@@ -6,25 +6,25 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY oilec "http://www.oil-e.net/ontology/rm-core.owl" >
-    <!ENTITY rm-core "http://www.oil-e.net/ontology/rm-core.owl#" >
+    <!ENTITY rm-core "http://www.oil-e.net/ontology/rm-core.owl" >
+    <!ENTITY rm-core2 "http://www.oil-e.net/ontology/rm-core.owl#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY oilea "http://www.oil-e.net/ontology/rm-archetypes.owl" >
-    <!ENTITY oiler "http://www.oil-e.net/ontology/rm-correspondences.owl" >
+    <!ENTITY rm-arch "http://www.oil-e.net/ontology/rm-archetypes.owl" >
+    <!ENTITY rm-crsp "http://www.oil-e.net/ontology/rm-correspondences.owl" >
 ]>
 
 
 <rdf:RDF xmlns="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#"
      xml:base="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase"
+     xmlns:rm-crsp="http://www.oil-e.net/ontology/rm-correspondences.owl"
+     xmlns:rm-arch="http://www.oil-e.net/ontology/rm-archetypes.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:oilea="http://www.oil-e.net/ontology/rm-archetypes.owl"
-     xmlns:oiler="http://www.oil-e.net/ontology/rm-correspondences.owl"
+     xmlns:rm-core2="&rm-core;#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:oilec="http://www.oil-e.net/ontology/rm-core.owl"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:rm-core="&oilec;#">
+     xmlns:rm-core="http://www.oil-e.net/ontology/rm-core.owl">
     <owl:Ontology rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase">
         <owl:imports rdf:resource="http://www.oil-e.net/ontology/rm-archetypes.owl"/>
         <owl:imports rdf:resource="http://www.oil-e.net/ontology/rm-core.owl"/>
@@ -47,8 +47,8 @@
     <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#CDI_Common_Data_Index -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#CDI_Common_Data_Index">
-        <rdf:type rdf:resource="&oilea;#CatalogueSystem"/>
-        <rm-core:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
+        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
+        <rm-core2:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
     </owl:NamedIndividual>
     
 
@@ -56,8 +56,8 @@
     <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#CSR_Cruise_Summary_Reports -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#CSR_Cruise_Summary_Reports">
-        <rdf:type rdf:resource="&oilea;#CatalogueSystem"/>
-        <rm-core:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
+        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
+        <rm-core2:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
     </owl:NamedIndividual>
     
 
@@ -65,8 +65,8 @@
     <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDIOS_European_Directory_of_Initial_Ocean-observing_Systems -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDIOS_European_Directory_of_Initial_Ocean-observing_Systems">
-        <rdf:type rdf:resource="&oilea;#CatalogueSystem"/>
-        <rm-core:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
+        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
+        <rm-core2:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
     </owl:NamedIndividual>
     
 
@@ -74,8 +74,8 @@
     <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMED_European_Directory_of_Marine_Environmental_Data_sets -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMED_European_Directory_of_Marine_Environmental_Data_sets">
-        <rdf:type rdf:resource="&oilea;#CatalogueSystem"/>
-        <rm-core:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
+        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
+        <rm-core2:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
     </owl:NamedIndividual>
     
 
@@ -83,8 +83,8 @@
     <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMERP_European_Directory_of_Marine_Environmental_Research_Projects -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMERP_European_Directory_of_Marine_Environmental_Research_Projects">
-        <rdf:type rdf:resource="&oilea;#CatalogueSystem"/>
-        <rm-core:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
+        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
+        <rm-core2:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
     </owl:NamedIndividual>
     
 
@@ -92,8 +92,8 @@
     <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMO_European_Directory_of_Marine_Organisations -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMO_European_Directory_of_Marine_Organisations">
-        <rdf:type rdf:resource="&oilea;#CatalogueSystem"/>
-        <rm-core:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
+        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
+        <rm-core2:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
     </owl:NamedIndividual>
     
 
@@ -101,8 +101,8 @@
     <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet">
-        <rdf:type rdf:resource="&oilec;#ResearchInfrastructure"/>
-        <rm-core:hasPart rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Curation_Subsystem"/>
+        <rdf:type rdf:resource="&rm-core;#ResearchInfrastructure"/>
+        <rm-core2:hasPart rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Curation_Subsystem"/>
     </owl:NamedIndividual>
     
 
@@ -110,9 +110,9 @@
     <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Curation_Subsystem -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Curation_Subsystem">
-        <rdf:type rdf:resource="&oilea;#DataCurationSystem"/>
-        <rm-core:hasPart rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
-        <rm-core:hasPart rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#Sextant_Catalogue"/>
+        <rdf:type rdf:resource="&rm-arch;#DataCurationSystem"/>
+        <rm-core2:hasPart rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
+        <rm-core2:hasPart rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#Sextant_Catalogue"/>
     </owl:NamedIndividual>
     
 
@@ -120,7 +120,7 @@
     <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories">
-        <rdf:type rdf:resource="&oilea;#CatalogueSystem"/>
+        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
     </owl:NamedIndividual>
     
 
@@ -128,7 +128,7 @@
     <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#Sextant_Catalogue -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#Sextant_Catalogue">
-        <rdf:type rdf:resource="&oilea;#CatalogueSystem"/>
+        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
