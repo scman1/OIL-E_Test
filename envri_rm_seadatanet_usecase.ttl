@@ -6,12 +6,14 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix oilea: <http://www.oil-e.net/ontology/rm-archetypes.owl> .
 @prefix oilec: <http://www.oil-e.net/ontology/rm-core.owl> .
+@prefix oiler: <http://www.oil-e.net/ontology/rm-correspondences.owl> .
 @base <http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase> .
 
 <http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase> rdf:type owl:Ontology ;
                                                                                    
                                                                                    owl:imports <http://www.oil-e.net/ontology/rm-archetypes.owl> ,
-                                                                                               <http://www.oil-e.net/ontology/rm-core.owl> .
+                                                                                               <http://www.oil-e.net/ontology/rm-core.owl> ,
+                                                                                               <http://www.oil-e.net/ontology/rm-correspondences.owl> .
 
 
 #################################################################
