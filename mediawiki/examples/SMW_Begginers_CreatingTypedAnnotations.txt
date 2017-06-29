@@ -1,0 +1,49 @@
+Subject: Berlin
+Properties (to describe individual characteristics of a class member):
+Is the capital of [[Capital of::Germany]]
+Is home to [[Has population::3,520,061]]
+The City measures [[Has area::891.85 km²]]
+Has average rainfall of [[Has average rainy days::106.3]] days
+
+Categories (to divide the content into groups that have similar characteristics)
+[[Category:City]]
+
+Subject: London
+Properties (to describe individual characteristics of a class member):
+Is the capital of [[Capital of::England]]
+Is the capital of [[Capital of::United Kingdom]]
+Is home to [[Has population::X]]
+The City measures [[Has area::X]]
+Has average rainfall of [[Has average rainy days::X]] days
+
+Categories (to divide the content into groups that have similar characteristics)
+[[Category:City]]
+
+Property:Capital of
+[[Has type:page]]
+
+Property: Has area
+[[Has type::Quantity]]
+
+[[Has property description::Used for property values that describe quantities in particular physical quantities such as time or distance.@en]]
+
+*[[Corresponds to::1 km²]]
+*[[Corresponds to::0.38610 sq mi]]
+*[[Corresponds to::1000 m²]]
+*[[Corresponds to::247.1054 acre]]
+*[[Corresponds to::988.4215 rood]]
+
+Property: Has average rainy days
+
+[[Has type::Number]]
+[[Has property description::Number of days it rains (on average) in one year.@en]]
+
+
+Semantic Search (QUERY)
+[[Capital of::Germany]]
+Result: Berlin
+
+Additional properties
+?Has population
+?Has area
+?Has average rainy days

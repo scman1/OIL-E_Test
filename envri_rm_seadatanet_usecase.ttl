@@ -1,0 +1,113 @@
+@prefix : <http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oilea: <http://www.oil-e.net/ontology/rm-archetypes.owl> .
+@prefix oilec: <http://www.oil-e.net/ontology/rm-core.owl> .
+@base <http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase> .
+
+<http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase> rdf:type owl:Ontology ;
+                                                                                   
+                                                                                   owl:imports <http://www.oil-e.net/ontology/rm-archetypes.owl> ,
+                                                                                               <http://www.oil-e.net/ontology/rm-core.owl> .
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#CDI_Common_Data_Index
+
+:CDI_Common_Data_Index rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
+                                owl:NamedIndividual ;
+                       
+                       <http://www.oil-e.net/ontology/rm-core.owl#partOf> :SeaDataNet_Metadata_Directories .
+
+
+
+###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#CSR_Cruise_Summary_Reports
+
+:CSR_Cruise_Summary_Reports rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
+                                     owl:NamedIndividual ;
+                            
+                            <http://www.oil-e.net/ontology/rm-core.owl#partOf> :SeaDataNet_Metadata_Directories .
+
+
+
+###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDIOS_European_Directory_of_Initial_Ocean-observing_Systems
+
+:EDIOS_European_Directory_of_Initial_Ocean-observing_Systems rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
+                                                                      owl:NamedIndividual ;
+                                                             
+                                                             <http://www.oil-e.net/ontology/rm-core.owl#partOf> :SeaDataNet_Metadata_Directories .
+
+
+
+###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMED_European_Directory_of_Marine_Environmental_Data_sets
+
+:EDMED_European_Directory_of_Marine_Environmental_Data_sets rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
+                                                                     owl:NamedIndividual ;
+                                                            
+                                                            <http://www.oil-e.net/ontology/rm-core.owl#partOf> :SeaDataNet_Metadata_Directories .
+
+
+
+###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMERP_European_Directory_of_Marine_Environmental_Research_Projects
+
+:EDMERP_European_Directory_of_Marine_Environmental_Research_Projects rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
+                                                                              owl:NamedIndividual ;
+                                                                     
+                                                                     <http://www.oil-e.net/ontology/rm-core.owl#partOf> :SeaDataNet_Metadata_Directories .
+
+
+
+###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMO_European_Directory_of_Marine_Organisations
+
+:EDMO_European_Directory_of_Marine_Organisations rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
+                                                          owl:NamedIndividual ;
+                                                 
+                                                 <http://www.oil-e.net/ontology/rm-core.owl#partOf> :SeaDataNet_Metadata_Directories .
+
+
+
+###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet
+
+:SeaDataNet rdf:type <http://www.oil-e.net/ontology/rm-core.owl#ResearchInfrastructure> ,
+                     owl:NamedIndividual ;
+            
+            <http://www.oil-e.net/ontology/rm-core.owl#hasPart> :SeaDataNet_Curation_Subsystem .
+
+
+
+###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Curation_Subsystem
+
+:SeaDataNet_Curation_Subsystem rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#DataCurationSystem> ,
+                                        owl:NamedIndividual ;
+                               
+                               <http://www.oil-e.net/ontology/rm-core.owl#hasPart> :SeaDataNet_Metadata_Directories ,
+                                                                                   :Sextant_Catalogue .
+
+
+
+###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories
+
+:SeaDataNet_Metadata_Directories rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
+                                          owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#Sextant_Catalogue
+
+:Sextant_Catalogue rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
+                            owl:NamedIndividual .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

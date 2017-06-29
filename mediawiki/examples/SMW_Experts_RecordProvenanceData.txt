@@ -1,0 +1,26 @@
+Record Provenance Data
+
+Property: Has population
+[[Has type::Reference]]
+[[Has fields::Population;Retrieved on;Retrieved from]]
+*[[Has property description::Statistics about the human population, human population that live in the same place.@en]]
+*[[Has preferred property label::population@fr]], [[Has preferred property label::población@es]], [[Has preferred property label::Bevölkerung@de]]
+ - Property:Population
+    *[[Has type::Number]]
+    *[[Has preferred property label::Población@es]] 
+ - Property:Retrieved on
+    *[[Has type::date]]
+    *[[Has preferred property label::Recurperado el@es]], *[[Has preferred property label::Date récupérée@fr]]
+ - Property:Retrieved from
+    *[[Has type::URL]]
+    *[[Has preferred property label::Recuperado de@es]],[[Has preferred property label::récupérés de@fr]]
+
+Berlin:
+Population: 3,671,000
+Retrieved on: 2017.06.29
+Retrieved from: https://en.wikipedia.org/wiki/Berlin
+
+London:
+Population: 8,787,892
+Retrieved on: 2017.06.29
+Retrieved from: https://en.wikipedia.org/wiki/London
