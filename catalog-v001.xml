@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1498770231506" name="http://www.oil-e.net/ontology/envri_rm.6.owl" uri="envri_rm.6.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1498770231506" name="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase" uri="envri_rm_seadatanet_usecase.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1498811981752" name="http://www.oil-e.net/ontology/envri_rm.6.owl" uri="envri_rm.6.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1498811981752" name="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase" uri="envri_rm_seadatanet_usecase.owl"/>
     </group>
 </catalog>
