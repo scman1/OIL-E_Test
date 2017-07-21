@@ -3,33 +3,1148 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rm-core "http://www.oil-e.net/ontology/rm-core.owl" >
-    <!ENTITY rm-core2 "http://www.oil-e.net/ontology/rm-core.owl#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY rm-arch "http://www.oil-e.net/ontology/rm-archetypes.owl" >
-    <!ENTITY rm-crsp "http://www.oil-e.net/ontology/rm-correspondences.owl" >
 ]>
 
 
-<rdf:RDF xmlns="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#"
-     xml:base="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase"
-     xmlns:rm-crsp="http://www.oil-e.net/ontology/rm-correspondences.owl"
-     xmlns:rm-arch="http://www.oil-e.net/ontology/rm-archetypes.owl"
+<rdf:RDF xmlns="http://www.oil-e.net/ontology/rm-core.owl#"
+     xml:base="http://www.oil-e.net/ontology/rm-core.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:rm-core2="&rm-core;#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:rm-core="http://www.oil-e.net/ontology/rm-core.owl">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase">
-        <owl:imports rdf:resource="http://www.oil-e.net/ontology/rm-archetypes.owl"/>
-        <owl:imports rdf:resource="http://www.oil-e.net/ontology/rm-core.owl"/>
-        <owl:imports rdf:resource="http://www.oil-e.net/ontology/rm-correspondences.owl"/>
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.oil-e.net/ontology/rm-core.owl">
+        <rdfs:label xml:lang="en">OIL-E RM core</rdfs:label>
+        <dc:title>OIL-E foundation ontology</dc:title>
+        <dc:description>This ontology is the new basis for OIL-E. It replaces the earlier ODP ontology used in previous versions. It is designed to be as simple as possible while capturing all the fundamental concepts needed to describe the reference model in ontological form, as well as defining most local/global restrictions needed for managing object relations and the set of standard annotations to be used in OIL-E descriptions.</dc:description>
+        <dc:subject>research infrastructure</dc:subject>
+        <dc:creator>Barbara Magagna</dc:creator>
+        <owl:versionInfo>2.1 (January 2017)</owl:versionInfo>
+        <dc:creator>Zhiming Zhao</dc:creator>
+        <dc:creator>Paul Martin</dc:creator>
+        <dc:language>en</dc:language>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/language -->
+
+    <owl:AnnotationProperty rdf:about="&dc;language"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/subject -->
+
+    <owl:AnnotationProperty rdf:about="&dc;subject"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="&dc;title"/>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#precondition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#precondition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#attributeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#attributeOf">
+        <rdfs:label>attribute of</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Attribute"/>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+        <owl:inverseOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasAttribute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#classifierFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#classifierFor">
+        <rdfs:label>classifier for</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Classifier"/>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+        <owl:inverseOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#consumedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#consumedBy">
+        <rdfs:label>consumed by</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_DataStream"/>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+        <owl:inverseOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#consumes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#consumes -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#consumes">
+        <rdfs:label>consumes</rdfs:label>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_DataStream"/>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#correspondsWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#correspondsWith">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label>corresponds with</rdfs:label>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#createdDuring -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#createdDuring">
+        <rdfs:label>created during</rdfs:label>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+        <owl:inverseOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#creates"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#creates -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#creates">
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#followedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#followedBy">
+        <rdfs:label>followed by</rdfs:label>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <owl:inverseOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#follows"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#follows -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#follows">
+        <rdfs:label>follows</rdfs:label>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#hasAttribute -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#hasAttribute">
+        <rdfs:label>has attribute</rdfs:label>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Attribute"/>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#hasClassifier -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier">
+        <rdfs:label>has classifier</rdfs:label>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Classifier"/>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#hasMember">
+        <rdfs:label>has member</rdfs:label>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#Actor"/>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#community"/>
+        <owl:inverseOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#memberOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#hasPart">
+        <rdfs:label>has part</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+        <owl:inverseOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#partOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#hasResource -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#hasResource">
+        <rdfs:label>has resource</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#community"/>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#resource"/>
+        <owl:inverseOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#resourceOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#invokedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#invokedBy">
+        <rdfs:label>invoked by</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+        <owl:inverseOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#invokes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#invokes -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#invokes">
+        <rdfs:label>invokes</rdfs:label>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#memberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#memberOf">
+        <rdfs:label>member of</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#Actor"/>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#community"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#partOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#partOf">
+        <rdfs:label>part of</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#producedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#producedBy">
+        <rdfs:label>produced by</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_DataStream"/>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+        <owl:inverseOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#produces"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#produces -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#produces">
+        <rdfs:label>produces</rdfs:label>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_DataStream"/>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#providedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#providedBy">
+        <rdfs:label>provided by</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+        <owl:inverseOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#provides"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#provides -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#provides">
+        <rdfs:label>provides</rdfs:label>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#required_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#required_for">
+        <rdfs:label>required for</rdfs:label>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+        <owl:inverseOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#requires"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#requires -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#requires">
+        <rdfs:label>requires</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#resourceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#resourceOf">
+        <rdfs:label>resource of</rdfs:label>
+        <rdfs:range rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#community"/>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#hasObjective -->
+
+    <owl:DatatypeProperty rdf:about="http://www.oil-e.net/ontology/rm-core.owl#hasObjective">
+        <rdfs:label>has objective</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#Actor -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#Actor">
+        <rdfs:label>actor</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#required_for"/>
+                <owl:someValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Behaviour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#Actor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#memberOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#community"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description>An actor is a science object that takes an active role in the behaviours of a system. Generally, such actors represent people or computational agents.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#CV_BindingObject -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#CV_BindingObject">
+        <rdfs:label>binding object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#CV_ComplexOperation -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#CV_ComplexOperation">
+        <rdfs:label>complex operation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Operation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#providedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_BindingObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_SimpleOperation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#providedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_BindingObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description>A complex operation represents a remote functionality invoked by one computation object onto a binding object created to broker interaction between more than two computational objects.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#CV_DataStream -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#CV_DataStream">
+        <rdfs:label>data stream</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#consumedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#consumedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#producedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#ComputationalViewpoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#producedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A data stream is a computational entity representing the transferral of data from one location to another, brokered by computational objects installed at each location.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#CV_Object -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#CV_Object">
+        <rdfs:label>computational object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#invokes"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Operation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#createdDuring"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Operation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#ComputationalViewpoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#provides"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Operation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description rdf:datatype="&xsd;string">A computational object is a representation of an entity in the real world from the computational viewpoint. It contains information and offers services. A system is composed of interacting objects. An object is characterized by that which makes it distinct from other objects and by encapsulation, abstraction and behaviour.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#CV_Operation -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#CV_Operation">
+        <rdfs:label>operation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#creates"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#ComputationalViewpoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#providedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#invokedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#invokedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#providedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description>A computation operation represents a remote functionality invoked by one computation object onto one or more other objects.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#CV_PersistentObject -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#CV_PersistentObject">
+        <rdfs:label>persistent object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#CV_SimpleOperation -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#CV_SimpleOperation">
+        <rdfs:label>simple operation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#CV_Operation"/>
+        <dc:description>A simple operation represents a remote functionality invoked by one computation object onto another.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#CV_Thing -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#CV_Thing">
+        <rdfs:label>computational view thing</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                        <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#ComputationalViewpoint"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <dc:description rdf:datatype="&xsd;string">The computational viewpoint of the Model accounts for the major computational objects expected within an environment research infrastructure and the interfaces by which they can be interacted with. Each object encapsulates functionality that needs to be collectively implemented by a service or resource within the infrastructure; each object also provides a number of interfaces by which that functionality can be invoked, or by which the object can invoke the functions of other objects. By binding compatible interfaces together, a network of interactions between objects can be described that demonstrates the computational requirements of a compliant research infrastructure.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#EV_Thing -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#EV_Thing">
+        <rdfs:label>engineering view thing</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                        <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#EngineeringViewpoint"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <dc:description rdf:datatype="&xsd;string">Concepts defined for the Engineering Viewpoint in the Recommendation IU_T X.902 and X.903 (INTERNATIONAL STANDARD ISO/IEC 10746-2/3) Information technology -Open Distributed Processing - Reference model: Foundations, Architecture.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#IV_Action -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#IV_Action">
+        <rdfs:label>information action</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#requires"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#IV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#creates"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#IV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#InformationViewpoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description rdf:datatype="&xsd;string">Information actions model the information processing in the system. Every action is associated with at least one object. Actions cause state changes in the objects that participate in them.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#IV_Object -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#IV_Object">
+        <rdfs:label>information object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#createdDuring"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#IV_Action"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasAttribute"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#IV_State"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#InformationViewpoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#createdDuring"/>
+                <owl:someValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#IV_Action"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#IV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#required_for"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#IV_Action"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description rdf:datatype="&xsd;string">An information object is a representation of an entity in the real world from the information viewpoint. It contains information and offers services. A system is composed of interacting objects. An object is characterized by that which makes it distinct from other objects and by encapsulation, abstraction and behaviour.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#IV_State -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#IV_State">
+        <rdfs:label>information state</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Attribute"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#attributeOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#IV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#InformationViewpoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description>Information objects can exist in a variety of different states relative to their natural lifecycle.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#IV_Thing -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#IV_Thing">
+        <rdfs:label>information view thing</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                        <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#InformationViewpoint"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <dc:description rdf:datatype="&xsd;string">The goal of the information viewpoint is to provide a common abstract model for the shared information handled by the infrastructure. The focus lies on the information itself, without considering any platform-specific or implementation details. It is independent from the computational interfaces and functions that manipulate the information or the nature of technology used to store it. Similar to a high level ontology, it aims to provide a unique and consistent interpretation of the shared information entities of a particular domain. The information viewpoint specifies the types of the information objects and the relationships between those types. It describes how the state of the data evolves as the results of computational operations. It also defines the constraints on the data and the rules governing the processing of such data.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#ModellingViewpoint -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#ModellingViewpoint">
+        <rdfs:label>modelling viewpoint</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Classifier"/>
+        <dc:description>A viewpoint on a distributed system as defined by RM-ODP.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#NV_Object -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#NV_Object">
+        <rdfs:label>engineering object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#NV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#EngineeringViewpoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#RM_Activity -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity">
+        <rdfs:label>reference activity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#follows"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#correspondsWith"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description>An activity involving objects present in a view of a system.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#RM_Attribute -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#RM_Attribute">
+        <rdfs:label>reference attribute</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Attribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#correspondsWith"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Attribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#attributeOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description>A quality of an object or activity present in a view of a system.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#RM_Classifier -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#RM_Classifier">
+        <rdfs:label>reference model classifier</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#classifierFor"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+        <dc:description>A categorisation used to classify things present in a particular view of a system.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#RM_Object -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#RM_Object">
+        <rdfs:label>reference object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#correspondsWith"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description>An object present in a view of a system.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#RM_Thing -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing">
+        <rdfs:label>reference model thing</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                <owl:someValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#ModellingViewpoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasAttribute"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Attribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Classifier"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#correspondsWith"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description>A thing that exists in the context of one or more views of a system.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#ResearchInfrastructure -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#ResearchInfrastructure">
+        <rdfs:label>research infrastructure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#Actor"/>
+        <dc:description>Physical, technical and social infrastructure dedicated to supporting a set of research interactions.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#SV_Behaviour -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#SV_Behaviour">
+        <rdfs:label>behaviour</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#requires"/>
+                <owl:someValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#ScienceViewpoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#creates"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#requires"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description rdf:datatype="&xsd;string">A behaviour of a community is a composition of actions performed by roles 
+    normally addressing separate business requirements. In the ENVRI-RM, the 
+    modelling of community behaviours is based on analysis of the common 
+    requirements of the ENVRI research infrastructure which has resulted in a 
+    list of common functions. The initial model focuses on the minimal set of 
+    requirements. A community behaviour can be either a single function or a 
+    composition of several functions from the function list.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#SV_Object -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#SV_Object">
+        <rdfs:label>science object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#ScienceViewpoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description>An entity that is explicitly identified within the science viewpoint.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#SV_Thing -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#SV_Thing">
+        <rdfs:label>science view thing</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                        <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#ScienceViewpoint"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <dc:description rdf:datatype="&xsd;string">The Science Viewpoint of the ENVRI-RM intends to capture the requirements for an environmental research infrastructure from the perspective of the people who perform their tasks and achieve their goals as mediated by the infrastructure. Modelling in this viewpoint uses a reverse engineering method, which derives the principles and properties of model objects through the analysis of the structure and functionality of the real-world systems.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#TV_Object -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#TV_Object">
+        <rdfs:label>technology object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#TechnologyViewpoint"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#TV_Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#TV_Thing -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#TV_Thing">
+        <rdfs:label>technology view thing</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#RM_Thing"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasClassifier"/>
+                        <owl:hasValue rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#TechnologyViewpoint"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <dc:description rdf:datatype="&xsd;string">Concepts defined for the Technology Viewpoint in the Recommendation IU_T X.902 and X.903 (INTERNATIONAL STANDARD ISO/IEC 10746-2/3) Information technology -Open Distributed Processing - Reference model: Foundations, Architecture.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#artefact -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#artefact">
+        <rdfs:label>artefact</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#artefact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#createdDuring"/>
+                <owl:someValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Behaviour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#required_for"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Behaviour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#createdDuring"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Behaviour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description>An artefact is something that created or passed between actors, or entrusted to resources, typically containing information of importance to some behaviour of the system.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#community -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#community">
+        <rdfs:label>community</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#community"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasMember"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#Actor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasResource"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasMember"/>
+                <owl:someValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#Actor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description rdf:datatype="&xsd;string">A community is a collaboration which consists of a set of roles agreeing their objective to achieve a stated business purpose.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#resource -->
+
+    <owl:Class rdf:about="http://www.oil-e.net/ontology/rm-core.owl#resource">
+        <rdfs:label>resource</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#createdDuring"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Behaviour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#resourceOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#community"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#resource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#required_for"/>
+                <owl:allValuesFrom rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#SV_Behaviour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description>A resource is a science object that assumes a passive role in the behaviours of a system, typically representing some facility or tool that actors can engage with.</dc:description>
+    </owl:Class>
     
 
 
@@ -44,92 +1159,98 @@
     
 
 
-    <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#CDI_Common_Data_Index -->
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#ComputationalViewpoint -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#CDI_Common_Data_Index">
-        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
-        <rm-core2:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
+    <owl:NamedIndividual rdf:about="http://www.oil-e.net/ontology/rm-core.owl#ComputationalViewpoint">
+        <rdf:type rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#ModellingViewpoint"/>
+        <rdfs:label>computational viewpoint</rdfs:label>
+        <dc:description>A modelling perspective based on the distribution of computational capabilities between processes used within a system.</dc:description>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#CSR_Cruise_Summary_Reports -->
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#EngineeringViewpoint -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#CSR_Cruise_Summary_Reports">
-        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
-        <rm-core2:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
+    <owl:NamedIndividual rdf:about="http://www.oil-e.net/ontology/rm-core.owl#EngineeringViewpoint">
+        <rdf:type rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#ModellingViewpoint"/>
+        <rdfs:label>engineering viewpoint</rdfs:label>
+        <dc:description>A modelling perspective based on the configuration of resources to provide communication channels and processing capacity for computational operations in a system.</dc:description>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDIOS_European_Directory_of_Initial_Ocean-observing_Systems -->
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#InformationViewpoint -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDIOS_European_Directory_of_Initial_Ocean-observing_Systems">
-        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
-        <rm-core2:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
+    <owl:NamedIndividual rdf:about="http://www.oil-e.net/ontology/rm-core.owl#InformationViewpoint">
+        <rdf:type rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#ModellingViewpoint"/>
+        <rdfs:label>information viewpoint</rdfs:label>
+        <dc:description>A modelling perspective based on the creation and management of information used within a system.</dc:description>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMED_European_Directory_of_Marine_Environmental_Data_sets -->
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#ScienceViewpoint -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMED_European_Directory_of_Marine_Environmental_Data_sets">
-        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
-        <rm-core2:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
+    <owl:NamedIndividual rdf:about="http://www.oil-e.net/ontology/rm-core.owl#ScienceViewpoint">
+        <rdf:type rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#ModellingViewpoint"/>
+        <rdfs:label>science viewpoint</rdfs:label>
+        <dc:description>A modelling perspective based on the roles and behaviours of actors in a system, and the artefacts and resources they use, specifically in the context of scientific investigation.</dc:description>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMERP_European_Directory_of_Marine_Environmental_Research_Projects -->
+    <!-- http://www.oil-e.net/ontology/rm-core.owl#TechnologyViewpoint -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMERP_European_Directory_of_Marine_Environmental_Research_Projects">
-        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
-        <rm-core2:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
+    <owl:NamedIndividual rdf:about="http://www.oil-e.net/ontology/rm-core.owl#TechnologyViewpoint">
+        <rdf:type rdf:resource="http://www.oil-e.net/ontology/rm-core.owl#ModellingViewpoint"/>
+        <rdfs:label>technology viewpoint</rdfs:label>
+        <dc:description>A modelling perspective based on the selection of hardware, technologies and standards to actualise different elements of a system.</dc:description>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMO_European_Directory_of_Marine_Organisations -->
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#EDMO_European_Directory_of_Marine_Organisations">
-        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
-        <rm-core2:partOf rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet">
-        <rdf:type rdf:resource="&rm-core;#ResearchInfrastructure"/>
-        <rm-core2:hasPart rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Curation_Subsystem"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Curation_Subsystem -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Curation_Subsystem">
-        <rdf:type rdf:resource="&rm-arch;#DataCurationSystem"/>
-        <rm-core2:hasPart rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories"/>
-        <rm-core2:hasPart rdf:resource="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#Sextant_Catalogue"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet_Metadata_Directories">
-        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#Sextant_Catalogue -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#Sextant_Catalogue">
-        <rdf:type rdf:resource="&rm-arch;#CatalogueSystem"/>
-    </owl:NamedIndividual>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#ComputationalViewpoint"/>
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#EngineeringViewpoint"/>
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#InformationViewpoint"/>
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#ScienceViewpoint"/>
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#TechnologyViewpoint"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#RM_Activity"/>
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#RM_Attribute"/>
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#RM_Object"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#artefact"/>
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#community"/>
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#resource"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#Actor"/>
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#artefact"/>
+            <rdf:Description rdf:about="http://www.oil-e.net/ontology/rm-core.owl#community"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 

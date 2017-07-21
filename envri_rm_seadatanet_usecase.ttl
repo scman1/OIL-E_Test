@@ -7,6 +7,7 @@
 @prefix rm-arch: <http://www.oil-e.net/ontology/rm-archetypes.owl> .
 @prefix rm-core: <http://www.oil-e.net/ontology/rm-core.owl> .
 @prefix rm-crsp: <http://www.oil-e.net/ontology/rm-correspondences.owl> .
+@prefix rm-core2: <http://www.oil-e.net/ontology/rm-core.owl#> .
 @base <http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase> .
 
 <http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase> rdf:type owl:Ontology ;
@@ -14,6 +15,71 @@
                                                                                    owl:imports <http://www.oil-e.net/ontology/rm-archetypes.owl> ,
                                                                                                <http://www.oil-e.net/ontology/rm-core.owl> ,
                                                                                                <http://www.oil-e.net/ontology/rm-correspondences.owl> .
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.oil-e.net/ontology/rm-core.owl#CV_Object
+
+rm-core2:CV_Object rdfs:subClassOf rm-core2:CV_Thing .
+
+
+
+###  http://www.oil-e.net/ontology/rm-core.owl#NV_Object
+
+rm-core2:NV_Object <http://purl.org/dc/elements/1.1/description> "An engineering object is any object of interest in the Engineering Viewpoint. These objects support computational requirements, distribution transparencies or infrastructural aspects of the system. Appart from BEOs, Containers and Channels, there are other engineering objects, whose aim is to provide basic engineering functions, such as managers, interceptors and directories."^^xsd:string .
+
+
+
+###  http://www.oil-e.net/ontology/rm-core.owl#resource
+
+rm-core2:resource rdfs:subClassOf rm-core2:IV_Object .
+
+
+
+###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#basic_engineering_object
+
+:basic_engineering_object rdf:type owl:Class ;
+                          
+                          rdfs:label "BEO"^^xsd:string ,
+                                     "EV BEO"^^xsd:string ,
+                                     "basic engineering object"^^xsd:string ;
+                          
+                          rdfs:subClassOf rm-core2:NV_Object ;
+                          
+                          <http://purl.org/dc/elements/1.1/description> "A Basic Engineering Object (BEO for short) is a special kind of engineering object, which is used to give a representation to a computational object in the engineering viewpoint."^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#channel_object
+
+:channel_object rdf:type owl:Class ;
+                
+                rdfs:label "EV channel"^^xsd:string ,
+                           "channel object"^^xsd:string ;
+                
+                rdfs:subClassOf rm-core2:NV_Object ;
+                
+                <http://purl.org/dc/elements/1.1/description> "A channel object is the representation of a communication element, which allows engineering objects to interact. The channel is the engineering equivalent of a computational binding. A channel consists of stubs, binders, protocol objects and interceptors, communicating basic engineering objects, generally residing in different nodes."^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#container_object
+
+:container_object rdf:type owl:Class ;
+                  
+                  rdfs:label "EV container"^^xsd:string ,
+                             "container object"^^xsd:string ;
+                  
+                  rdfs:subClassOf rm-core2:NV_Object .
+
+
+
 
 
 #################################################################
@@ -28,7 +94,7 @@
 :CDI_Common_Data_Index rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
                                 owl:NamedIndividual ;
                        
-                       <http://www.oil-e.net/ontology/rm-core.owl#partOf> :SeaDataNet_Metadata_Directories .
+                       rm-core2:partOf :SeaDataNet_Metadata_Directories .
 
 
 
@@ -37,7 +103,7 @@
 :CSR_Cruise_Summary_Reports rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
                                      owl:NamedIndividual ;
                             
-                            <http://www.oil-e.net/ontology/rm-core.owl#partOf> :SeaDataNet_Metadata_Directories .
+                            rm-core2:partOf :SeaDataNet_Metadata_Directories .
 
 
 
@@ -46,7 +112,7 @@
 :EDIOS_European_Directory_of_Initial_Ocean-observing_Systems rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
                                                                       owl:NamedIndividual ;
                                                              
-                                                             <http://www.oil-e.net/ontology/rm-core.owl#partOf> :SeaDataNet_Metadata_Directories .
+                                                             rm-core2:partOf :SeaDataNet_Metadata_Directories .
 
 
 
@@ -55,7 +121,7 @@
 :EDMED_European_Directory_of_Marine_Environmental_Data_sets rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
                                                                      owl:NamedIndividual ;
                                                             
-                                                            <http://www.oil-e.net/ontology/rm-core.owl#partOf> :SeaDataNet_Metadata_Directories .
+                                                            rm-core2:partOf :SeaDataNet_Metadata_Directories .
 
 
 
@@ -64,7 +130,7 @@
 :EDMERP_European_Directory_of_Marine_Environmental_Research_Projects rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
                                                                               owl:NamedIndividual ;
                                                                      
-                                                                     <http://www.oil-e.net/ontology/rm-core.owl#partOf> :SeaDataNet_Metadata_Directories .
+                                                                     rm-core2:partOf :SeaDataNet_Metadata_Directories .
 
 
 
@@ -73,16 +139,16 @@
 :EDMO_European_Directory_of_Marine_Organisations rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#CatalogueSystem> ,
                                                           owl:NamedIndividual ;
                                                  
-                                                 <http://www.oil-e.net/ontology/rm-core.owl#partOf> :SeaDataNet_Metadata_Directories .
+                                                 rm-core2:partOf :SeaDataNet_Metadata_Directories .
 
 
 
 ###  http://www.semanticweb.org/abraham/ontologies/2017/5/envri_rm_seadatanet_usecase#SeaDataNet
 
-:SeaDataNet rdf:type <http://www.oil-e.net/ontology/rm-core.owl#ResearchInfrastructure> ,
+:SeaDataNet rdf:type rm-core2:ResearchInfrastructure ,
                      owl:NamedIndividual ;
             
-            <http://www.oil-e.net/ontology/rm-core.owl#hasPart> :SeaDataNet_Curation_Subsystem .
+            rm-core2:hasPart :SeaDataNet_Curation_Subsystem .
 
 
 
@@ -91,8 +157,8 @@
 :SeaDataNet_Curation_Subsystem rdf:type <http://www.oil-e.net/ontology/rm-archetypes.owl#DataCurationSystem> ,
                                         owl:NamedIndividual ;
                                
-                               <http://www.oil-e.net/ontology/rm-core.owl#hasPart> :SeaDataNet_Metadata_Directories ,
-                                                                                   :Sextant_Catalogue .
+                               rm-core2:hasPart :SeaDataNet_Metadata_Directories ,
+                                                :Sextant_Catalogue .
 
 
 
